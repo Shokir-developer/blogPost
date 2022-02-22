@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <h2>{{detail.title}}</h2>
+        <p class=" text-muted">{{detail.author}} | {{detail.sana}}</p>
+        <h5 class="card-text "><b>{{detail.main_content }}</b></h5>
+        <img src="{{detail.image.url}}" alt="rasm" class="card-img-top img-thumbnail mb-3">
+        <p class="card-text ">{{detail.content }}</p>
+      </div>
+    </div>
+ 
+        
+        <!-- Sidebar Widgets Column -->
+		<div class="col-md-4 float-right ">
+			<div class="card my-4">
+        		<h5 class="card-header">About Us</h5>
+    			<div class="card-body">
+        				<p class="card-text"> Mening bu Blog Postim django frameworkini o'rganuvchilar uchun. Bu blog postdan yanada ko'proq ma'lumot olishingiz mumkin ...</p>
+        				<a href="#" class="btn btn-danger">Koproq!</a>
+
+    			</div>
+			</div>
+		</div>
+
+
+
+    </div>
+</div>
+  
+
+  {% endblock content %}

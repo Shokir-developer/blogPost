@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+
+        <div class="col-md-8 mt-3 left">
+        {% for post in posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{post.title}}</h2>
+                    <p class="card-text text-muted h6">{{post.author}} | {{post.sana}} </p>
+                    <p class="card-text">{{post.main_content |slice:'200'}}.....</p>
+                   
+                    <a href="{% url 'detail' post.slug %}" class="btn btn-primary">Read More &rarr;</a>
+
+                    
+
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        
+        <!-- Sidebar Widgets Column -->
+		<div class="col-md-4 float-right ">
+			<div class="card my-4">
+        		<h5 class="card-header">About Us</h5>
+    			<div class="card-body">
+        				<p class="card-text"> Mening bu Blog Postim django frameworkini o'rganuvchilar uchun. Bu blog postdan yanada ko'proq ma'lumot olishingiz mumkin ...</p>
+        				<a href="https://docs.djangoproject.com/en/4.0/" class="btn btn-danger">Koproq!</a>
+
+    			</div>
+			</div>
+		</div>
+
+
+
+    </div>
+</div>
+  
+
+  {% endblock content %}
